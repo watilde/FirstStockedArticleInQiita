@@ -99,6 +99,7 @@ function appendHatenaButton(title, url) {
 
 
 var input = [];
+console.log('Try to type Konami Code <3');
 konami = [38,38,40,40,37,39,37,39,66,65];
 
 $(window).keyup(function(e){

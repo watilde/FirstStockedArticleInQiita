@@ -25,6 +25,10 @@ $('#search').on('click', function (){
   $('#main').fadeOut('fast', search(username));
 });
 
+$('#error_alert_close').on('click', function () {
+  $('#error_alert').fadeOut('slow');
+});
+
 function search (username, page, _data) {
   page = page || 1;
   $.ajax({
@@ -77,6 +81,12 @@ function search (username, page, _data) {
       $('#stockers_count').text(data.length);
       $('#main').fadeIn('slow');
     });
+  }).fail(function (e) {
+    var status = e.status;
+    var statusText = e.statusText;
+    $('#error_status').text(status);
+    $('#error_text').text(statusText);
+    $('#error_alert').fadeIn('slow');
   });
 }
 

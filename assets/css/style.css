@@ -94,3 +94,7 @@ footer {
 #hatena-button {
   margin-right: 20px;
 }
+
+#error_alert {
+  display: none;
+}

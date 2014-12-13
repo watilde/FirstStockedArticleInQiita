@@ -44,6 +44,7 @@ function search (username, page, _data) {
     $('#owner').attr('href', 'http://qiita.com/' + data.user.id);
     $('.owner_url').attr('href', 'http://qiita.com/' + data.user.id);
     $('.html_url').attr('href', data.url);
+    appendHatenaButton(data.title, data.url)
 
     $('#share').attr('href', 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) +
       '&amp;text=I+found+' + username + '\'s+%23FirstStockedArticleInQiita%3A+' +
@@ -73,4 +74,11 @@ function search (username, page, _data) {
       $('#main').fadeIn('slow');
     });
   });
+}
+
+function appendHatenaButton(title, url) {
+  var tag = '<a href="http://b.hatena.ne.jp/entry/' + url + '" class="hatena-bookmark-button" data-hatena-bookmark-title="' + title + '" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>';
+  $('#hatena-button').empty();
+  tag = $(tag);
+  $('#hatena-button').append(tag);
 }

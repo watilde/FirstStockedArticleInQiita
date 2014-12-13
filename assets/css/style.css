@@ -99,6 +99,10 @@ footer {
   display: none;
 }
 
+.fsS {
+  font-size: 13px;
+}
+
 .spin {
   -webkit-animation: spin 1.5s linear infinite;
   -moz-animation: spin 1.5s linear infinite;

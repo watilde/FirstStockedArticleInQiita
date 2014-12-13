@@ -5,14 +5,10 @@ window.onload = function () {
   $('#main').fadeOut('fast', search(username));
 };
 
-setInterval(function (){
-  var username = $('#username').val();
-  window.location.hash = username;
-}, 16);
-
 $('#username').keypress(function (e) {
   var username = $('#username').val();
   username = encodeURIComponent(username);
+  window.location.hash = username;
   if (e.which === 13) {
     $('#main').fadeOut('fast', search(username));
   }

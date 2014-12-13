@@ -52,6 +52,23 @@ function search (username, page, _data) {
     $.ajax({
       url: 'http://qiita.com/api/v2/items/' + data.id + '/stockers'
     }).done(function (data) {
+      $('#stockers').empty();
+      Object.keys(data).forEach(function (key) {
+        var d = data[key];
+        var id = d.id;
+        var url = 'http://qiita.com/' + id;
+        var image = d.profile_image_url;
+        var img = $('<img>');
+        img.attr({
+          src: image,
+          width: 18,
+          height: 18
+        });
+        var link = $('<a></a>');
+        link.attr('href', url);
+        link.append(img);
+        $('#stockers').append(link);
+      });
       $('#stockers_count').text(data.length);
       $('#main').fadeIn('slow');
     });

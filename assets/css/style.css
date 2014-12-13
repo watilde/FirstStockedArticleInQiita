@@ -41,6 +41,9 @@ h2 {
   color: #707070;
   font-size: 15px;
   padding-right: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .media {
   margin-bottom: 0;
@@ -69,6 +72,10 @@ h2 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+#stockers a {
+  margin-right:5px;
 }
 
 body {margin-bottom: 30px;}

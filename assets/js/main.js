@@ -40,7 +40,7 @@ function search (username) {
     $('.html_url').attr('href', data.url);
 
     $('#share').attr('href', 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) +
-      '&amp;text=I+found+my+%23FirstStockedArticleInQiita%3A+' +
+      '&amp;text=I+found+' + username + '\'s++%23FirstStockedArticleInQiita%3A+' +
       encodeURIComponent(data.url) + '.+What+was+yours%3F');
 
     $.ajax({

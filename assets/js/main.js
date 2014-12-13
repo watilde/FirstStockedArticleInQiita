@@ -46,7 +46,6 @@ function search (username) {
     $.ajax({
       url: 'http://qiita.com/api/v2/items/' + data.id + '/stockers'
     }).done(function (data) {
-      window.a = data;
       $('#stockers_count').text(data.length);
       $('#main').fadeIn('slow');
     });

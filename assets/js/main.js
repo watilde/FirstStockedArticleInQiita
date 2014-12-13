@@ -7,8 +7,8 @@ window.onload = function () {
 
 $('#username').keypress(function (e) {
   var username = $('#username').val();
-  username = encodeURIComponent(username);
   window.location.hash = username;
+  username = encodeURIComponent(username);
   if (e.which === 13) {
     $('#main').fadeOut('fast', search(username));
   }

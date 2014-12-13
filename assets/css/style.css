@@ -78,7 +78,7 @@ h2 {
   margin-right:5px;
 }
 
-body {margin-bottom: 30px;}
+body {margin-bottom: 50px;}
 footer {
   height: 30px;
   width: 100%;
@@ -87,4 +87,6 @@ footer {
   bottom: 0;
   color: rgb(85, 85, 85);
   font-size: 11px;
+  background-color: #eee;
+  border-top: #ddd;
 }

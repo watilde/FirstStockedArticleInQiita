@@ -96,3 +96,19 @@ function appendHatenaButton(title, url) {
   tag = $(tag);
   $('#hatena-button').append(tag);
 }
+
+
+var input = [];
+konami = [38,38,40,40,37,39,37,39,66,65];
+
+$(window).keyup(function(e){
+  input.push(e.keyCode);
+
+  if (input.toString().indexOf(konami) >= 0) {
+    $('#logo').addClass('spin');
+    setTimeout(function (){
+      $('#logo').removeClass('spin');
+    }, 3000);
+    input = [];
+  }
+});

@@ -2,7 +2,7 @@ window.onload = function () {
   if (1 > window.location.hash.length) return;
   var username = window.location.hash.substr(1);
   $('#username').val(username);
-  $('#main').fadeOut('fast',search(username));
+  $('#main').fadeOut('fast', search(username));
 };
 
 $('#username').keypress( function (e) {
@@ -10,7 +10,7 @@ $('#username').keypress( function (e) {
   window.location.hash = username;
   username = encodeURIComponent(username);
   if (e.which === 13) {
-    $('#main').fadeOut('fast',search(username));
+    $('#main').fadeOut('fast', search(username));
   }
 });
 
@@ -18,11 +18,11 @@ $('#search').on('click', function (){
   var username = $('#username').val();
   window.location.hash = username;
   username = encodeURIComponent(username);
-  $('#main').fadeOut('fast',search(username));
+  $('#main').fadeOut('fast', search(username));
 });
 
-function search (username) {
-  var page = 1;
+function search (username, page, _data) {
+  page = page || 1;
   $.ajax({
     url:'http://qiita.com/api/v2/users/' + username + '/stocks',
     data:{
@@ -30,6 +30,12 @@ function search (username) {
       per_page: 100
     }
   }).done(function (data) {
+    // Pager
+    if (data.length !== 0) {
+      search(username, ++page, data);
+      return;
+    }
+    data = _data;
     data = data.slice(-1)[0];
     $('#avatar_url').attr('src', data.user.profile_image_url);
     $('#name').text(data.title);

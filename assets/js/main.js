@@ -43,8 +43,31 @@ function search (username, page, _data) {
       search(username, ++page, data);
       return;
     }
-    data = _data;
-    data = data.slice(-1)[0];
+    data = _data.slice(-1)[0];
+    var date = (function () {
+      var d = data.created_at;
+      d = new Date(d);
+      var y = d.getFullYear();
+      var m = d.getMonth();
+      var d = d.getDate();
+      var mon = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ];
+
+      return mon[m] +' ' + d + ', ' + y;
+    }());
+    $('#created_at').text(date);
     $('#avatar_url').attr('src', data.user.profile_image_url);
     $('#name').text(data.title);
     $('#login').text('@' + data.user.id);

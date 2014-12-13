@@ -103,6 +103,12 @@ footer {
   font-size: 13px;
 }
 
+#created_at {
+  padding-left: 36px;
+  text-align: center;
+  font-size: 14px;
+}
+
 .spin {
   -webkit-animation: spin 1.5s linear infinite;
   -moz-animation: spin 1.5s linear infinite;

@@ -45,6 +45,9 @@ h2 {
   overflow: hidden;
   white-space: nowrap;
 }
+.center {
+  text-align: center;
+}
 .media {
   margin-bottom: 0;
 }

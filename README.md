@@ -19,3 +19,7 @@ Just enter the @username below to get started.
 
 ## based on
 https://discover.twitter.com/first-tweet
+
+## Qiita Button
+
+[![Qiita Button](https://github2qiita.herokuapp.com/assets/img/post_qiita.png)](https://github2qiita.herokuapp.com/)
